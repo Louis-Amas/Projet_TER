@@ -7,71 +7,93 @@ import "../interfaces/IDiamondCut.sol";
 
 contract AdvancedTokenVote1202 {
 
-    mapping(uint/*issueId*/ => bool) internal isOpen;
+    bytes32 constant ADVANCE_DIAMOND_STORAGE = keccak256("diamond.advancedtokenvote");
 
-    mapping(uint/*issueId*/ => mapping (address/*user*/ => uint256/*weight*/)) public weights;
-    mapping(uint/*issueId*/ => uint256/*weight*/) public totalWeights;
-    mapping(uint/*issueId*/ => uint256) public weightedVoteCounts;
+    struct AdvancedTokenVoteStorage {
+        mapping(uint/*upgradeId*/ => bool) isOpen;
+        mapping(uint/*upgradeId*/ => address[]/*voters*/) voters;
+        mapping(uint/*upgradeId*/ => mapping (address/*user*/ => uint256/*weight*/)) weights;
+        mapping(uint/*upgradeId*/ => uint256/*weight*/) totalWeights;
+        mapping(uint/*upgradeId*/ => uint256) voteCounts;
+        mapping(uint/*upgradeId*/ => IDiamondCut.FacetCut[]) upgrades;
 
-    mapping(uint/*issueId*/ => IDiamondCut.FacetCut[]) public upgrades;
+        VoteToken token;
+    }
 
-    VoteToken private token;
-    address[] voters;
+    function getAdvancedTokenVoteStorage() internal pure returns (AdvancedTokenVoteStorage storage st) {
+        bytes32 pos = ADVANCE_DIAMOND_STORAGE;
+        assembly {
+            st.slot := pos
+        }
+    }
 
-
-    constructor(address _tokenAddr, address[] memory _voters) {
-        token = VoteToken(_tokenAddr);
-        voters = _voters;
+    constructor(address _tokenAddr) {
+        AdvancedTokenVoteStorage storage st = getAdvancedTokenVoteStorage();
+        st.token = VoteToken(_tokenAddr);
     }
 
     function askForUpgrade(uint upgradeId, IDiamondCut.FacetCut[] memory _upgrades) public {
-        require(upgrades[upgradeId].length == 0);
+        AdvancedTokenVoteStorage storage st = getAdvancedTokenVoteStorage();
+        require(st.upgrades[upgradeId].length == 0);
         require(_upgrades.length >= 1);
-        isOpen[upgradeId] = true;
-        for (uint i = 0; _upgrades.length > i; ++i) {
-            upgrades[upgradeId].push(_upgrades[i]);
-        }
+        require(st.token.balanceOf(msg.sender) != 0);
 
+        st.isOpen[upgradeId] = true;
+
+        for (uint i = 0; _upgrades.length > i; ++i) {
+            st.upgrades[upgradeId].push(_upgrades[i]);
+        }
+        
+        /* Keep track of who has right to vote for this upgrade*/
+        st.voters[upgradeId] = st.token.getHolders(); 
         /* Init weights to current ERC20 balance of each voters*/
-        for (uint i = 0 ; voters.length > i ; ++i) {
-            uint256 balance = token.balanceOf(voters[i]);
-            weights[upgradeId][voters[i]] = balance;
-            totalWeights[upgradeId] += balance;
+        for (uint i = 0 ; st.voters[upgradeId].length > i ; ++i) {
+            uint256 balance = st.token.balanceOf(st.voters[upgradeId][i]);
+            st.weights[upgradeId][st.voters[upgradeId][i]] = balance;
+            st.totalWeights[upgradeId] += balance;
         }
 
     }
 
     function vote(uint upgradeId) public returns (bool success) {
-        require(isOpen[upgradeId]);
+        AdvancedTokenVoteStorage storage st = getAdvancedTokenVoteStorage();
+        require(st.isOpen[upgradeId]);
 
-        uint256 weight = weights[upgradeId][msg.sender];
+        uint256 weight = st.weights[upgradeId][msg.sender];
 
-        weightedVoteCounts[upgradeId] += weight;
+        st.voteCounts[upgradeId] += weight;
+        if (st.voteCounts[upgradeId] > st.totalWeights[upgradeId] / 2) {
+            //accept change
+        } 
 
         emit OnVote(upgradeId, msg.sender); 
         return true;
     }
 
-    function setStatus(uint issueId, bool isOpen_) public returns (bool success) {
+    function setStatus(uint upgradeId, bool isOpen_) public returns (bool success) {
+        AdvancedTokenVoteStorage storage st = getAdvancedTokenVoteStorage();
         // Should have a sense of ownership. Only Owner should be able to set the status
-        isOpen[issueId] = isOpen_;
-        emit OnStatusChange(issueId, isOpen_);
+        st.isOpen[upgradeId] = isOpen_;
+        emit OnStatusChange(upgradeId, isOpen_);
         return true;
     }
 
-    function weightOf(uint issueId, address addr) public view returns (uint weight) {
-        return weights[issueId][addr];
+    function weightOf(uint upgradeId, address addr) public view returns (uint weight) {
+        AdvancedTokenVoteStorage storage st = getAdvancedTokenVoteStorage();
+        return st.weights[upgradeId][addr];
     }
 
-    function getStatus(uint issueId) public view returns (bool isOpen_) {
-        return isOpen[issueId];
+    function getStatus(uint upgradeId) public view returns (bool isOpen_) {
+        AdvancedTokenVoteStorage storage st = getAdvancedTokenVoteStorage();
+        return st.isOpen[upgradeId];
     }
 
-    function weightedVoteCountsOf(uint upgradeId) public view returns (uint count) {
-        return weightedVoteCounts[upgradeId];
+    function voteCountsOf(uint upgradeId) public view returns (uint count) {
+        AdvancedTokenVoteStorage storage st = getAdvancedTokenVoteStorage();
+        return st.voteCounts[upgradeId];
     }
 
     event OnVote(uint upgradeId, address indexed _from);
-    event OnStatusChange(uint issueId, bool newIsOpen);
+    event OnStatusChange(uint upgradeId, bool newIsOpen);
 
 }

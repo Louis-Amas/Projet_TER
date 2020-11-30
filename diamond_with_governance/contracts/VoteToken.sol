@@ -14,6 +14,14 @@ contract VoteToken is ERC20 {
         }
     }
 
+    function getHoldersCount() view external returns (uint size){
+        return holders.length;
+    }
+
+    function getHolders() view external returns (address[] memory _holders) {
+        return holders;
+    }
+    
     function transfer(address recipient, uint256 amount) public virtual override returns (bool success) {
         if (!ERC20.transfer(recipient, amount))
             return false;
@@ -27,8 +35,8 @@ contract VoteToken is ERC20 {
         for (uint i = 0 ; holders.length > i ; ++i) {
             // If the sender has no longer token delete it from holders
             if (senderNeedsToBeDeleted && msg.sender == holders[i]) {
-                delete holders[i];
-                continue;
+                holders[i] = holders[holders.length - 1];
+                holders.pop();
             }
             if (holders[i] == recipient) {
                 return true;
