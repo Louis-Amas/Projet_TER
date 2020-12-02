@@ -16,10 +16,10 @@ import "./interfaces/IERC173.sol";
 import "./interfaces/IERC165.sol";
 
 contract Diamond {
-    constructor(IDiamondCut.FacetCut[] memory _diamondCut, address _owner) payable {
-        LibDiamond.diamondCut(_diamondCut, address(0), new bytes(0));
-        LibDiamond.setContractOwner(_owner);
-
+    constructor(/* IDiamondCut.FacetCut[] memory _diamondCut, address _owner*/) payable {
+      //   LibDiamond.diamondCut(_diamondCut, address(0), new bytes(0));
+        // LibDiamond.setContractOwner(_owner);
+        //
         LibDiamond.DiamondStorage storage ds = LibDiamond.diamondStorage();
 
         // adding ERC165 data
@@ -27,6 +27,10 @@ contract Diamond {
         ds.supportedInterfaces[type(IDiamondCut).interfaceId] = true;
         ds.supportedInterfaces[type(IDiamondLoupe).interfaceId] = true;
         ds.supportedInterfaces[type(IERC173).interfaceId] = true;
+    }
+
+    function _applyUpgrades(IDiamondCut.FacetCut[] memory _diamondCut) internal {
+        LibDiamond.diamondCut(_diamondCut, address(0), new bytes(0));
     }
 
     // Find facet for function that is called and execute the
