@@ -17,7 +17,6 @@ contract Exchange1 is ERC20 {
         _mint(msg.sender, msg.value * 10);
         st.currentSupply -= msg.value * 10;
         Utils.changeBehavior();
-        emit Debug(st.currentSupply);
     }
 
 }
