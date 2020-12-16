@@ -8,11 +8,104 @@
 
 \subsection{Phase de recherche}
 
-Contactez l'équipe de développeur de eth.
+Pendant la phase de préparation du projet, je me suis renseigné sur toutes les manières de rendre un smart contract modifiable.
+Mon temps de projet étant assez court, je me suis concentré sur une méthode nommée Proxy. Cette méthode permet de créer un
+smart contract en façade qui déléguera les appels à un autre smart contract dit d'implémentation. J'ai aussi contacté
+l'équipe de développement d'Ethereum afin d'obtenir plus de ressources. L'équipe de développement m'a répondu avec un document
+contenant un récapitulatif de l'état de l'art sur la modification des smarts contracts. Une aubaine pour moi.
+
+Ce document contenait de nombreux lien vers des répertoires Git, après quelques heures à lire le code source de ces répertoires,
+et avec mes recherches en amont j'avais toutes les clefs nécessaires pour commencer. 
+
+\subsection{Les outils}
+
+Il me fallait un environnement de développement afin de commencer à programmer un prototype. L'Ethereum étant une technologie
+décentralisée contenant plusieurs nœuds il est nécessaire d'utiliser des outils de simulation ou des réseaux de tests (Testnet).
+J'ai opté pour la simulation de la blockchain Ethereum. J'ai utilisé la suite d'outil Truffle.
+
+Truffle contient un logiciel permettant d'émuler une blockchain Ethereum mais aussi, des bibliothèques pour gérer tout le cycle 
+de vie des smarts contracts, développement, compilation, déploiement et test.
+
+Truffle se présente sous la forme d'une interface de commande et d'une architecture de fichier spécifique. Truffle m'a été très
+utile pour tester mes smarts contracts. En effet, il est possible d'écrire des tests automatiques en Javascript afin
+de vérifier le bon fonctionnement des smarts contract.
+
+Truffle peut aussi être connecté à une vraie blockchain et donc être utilisé en production. De plus, quelqu'un voulant comprendre
+ou réutiliser mon code, pourra exécuter mon code une fois qu'il aura configuré la blockchain sur laquelle déployé. Cela permet 
+de simplifier l'environnement de développement. Durant ma phase
+de recherche j'ai lu les tests Truffle des implémentations trouvés sur internet afin de mieux comprendre leurs fonctionnements.
+
+L'outil Ganache est aussi très utile pour débuger les smarts contracts car, il est possible de lire chaque transaction et chaque
+bloc de la blockchain simulé.
 
 \subsection{Premier prototype}
 
+Une fois tout en place j'ai pu commencer mon développement. J'ai décidé de commencer par l'implémentation d'un système de vote 
+électronique comme décrit dans le scénario 1. J'ai programmé un système de vote simple permettant au créateur du vote de donner
+le droit de voter a qu'il souhaite. Chaque utilisateur ayant le droit de vote peut alors voter pour un des candidats proposer par
+le créateur du contrat. Je veux pouvoir avoir la possibilité de donner mon vote à quelqu'un d'autre, c'est-à-dire faire une 
+procuration. Je souhaiterais pouvoir ajouter ou enlever dynamiquement cette fonctionnalité.
+
+\subsubsection{Méthode utilisé}
+
+Mon premier prototype réalise donc cette fonctionnalité. Pour réaliser cette modification alors que je rappelle 
+qu'elle est normalement impossible car, les contrats sont immuable. J'ai utilisé une méthode appelée Proxy.
+Pour cela, j'ai créé un contrat avec quelque particularité. J'ai utilisé la fonction "fallback()" de Solidity.
+Cette fonction est appelée quand la fonction appelée sur un contrat n'existe pas. Cette fonctionnalité m'est très
+utile, car je vais pouvoir à l'aide de l'opcode delegatecall transmettre touts les appels fait au contrat Proxy
+au contrat contenant l'implémentation.
+
+\begin{figure}
+  \caption{Exemple de la méthode Proxy}
+  \includegraphics[scale=0.6]{proxy.jpg}
+  \centering 
+  \label{fig:proxy}
+\end{figure}
+
+\subsubsection{Détail technique}
+L'opcode delegatecall permet d'exécuter du code se situant dans un autre contrat voir \pageref{fig:proxy}. 
+Il prend en paramètre une adresse d'un autre contrat.
+
+Néanmoins, il est important de bien comprendre comment Solidity stocke les variables dans un contract, afin de 
+comprendre comment le code exécuter dans le contrat appelé par "delegatecall", peut-il interagir avec les variables.
+
+En effet, l'opcode "delegatecall" à un comportement peu intuitif, delegatecall exécute le code d'un autre contrat
+mais garde le stockage du contrat appelant "delegatecall". Cela veut dire que le contrat implémentation doit savoir comment 
+les variables du contrat appelant sont stockées.
+
+Solidity stocke les variables les une après les autres ($\forall n \in N, var_1 \mapsto pos_1, var_2 \mapsto pos_2,
+..., var_n \mapsto pos_n$)
+
+Pour la réalisation d'un contrat Proxy il est nécessaire d'avoir une variable contenant l'adresse d'une implémentation,
+il est très important que le contrat contenant l'implémentation n'override pas son adresse.
+
+Il existe deux méthodes pour s'assurer que cela n'arrive pas. La méthode la plus simple et de mettre la variable contenant
+l'implémentation dans chaque contrat. 
+
+\begin{figure}[h!]
+  \caption{Exemple de la méthode Proxy avec stockage structuré}
+  \includegraphics[scale=0.5]{proxy_structured_stockage.jpg}
+  \centering 
+  \label{fig:proxy_structuré}
+\end{figure}
+
+La deuxième méthode appelé stockage non structuré est de stocker l'adresse de l'implémentation à une position "aléatoire".
+Pour cela, on peut placer la variable à la position retournée par le calcul de la fonction sha3 sur le nom de la variable.
+La fonction sha3 étant une fonction de hash il y a très peu de risque de collision.
+
+La méthode avec un stockage non structuré est une meilleure solution car, elle permet d'utiliser des contrats d'implémentation 
+qui ne connaisse pas l'existence du Proxy.
+
+\begin{figure}[h!]
+  \caption{Exemple de la méthode Proxy avec stockage non structuré}
+  \includegraphics[scale=0.5]{proxy_unstructured.jpg}
+  \centering 
+  \label{fig:proxy_structuré}
+\end{figure}
+
 \subsection{Comparaison avec la bibliothèque populaire}
 
-\subsection{Puissance du standard}
+\subsection{Dernière avancé}
+
+
 

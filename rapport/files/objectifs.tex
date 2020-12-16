@@ -1,8 +1,49 @@
-\section{Objectifs}
+\section{Mes Objectifs et les scénarios}
+
+\subsection{Objectifs}
+
+Les objectifs de ce projet ont été les suivants:
 
 \begin{itemize}
-    \item Prototype de smart contract modifiable.
-    \item Comparaison avec une bibliothèque populaire.
-    \item Comparaison avec le standard.
+    \item Créer des prototypes de smart contract modifiable.
+    \item Comparaison de ma solution avec une bibliothèque populaire.
+    \item Comparaison avec l'état de l'art standard.
 \end{itemize}
 
+Dès débuts du mois d'octobre, j'ai commencé à me renseigner sur les technologies présentées au chapitre
+précédent. Suite à quelque réunion avec Mr Luigi Liquori, nous avions trouvé un chemin vers
+lequel je pouvais m'orienter afin de réaliser mon premier smart contract modifiable.
+
+Nous avons alors pris la décision de réaliser des prototypes intégralement par nous même.
+L'objectif est ici d'apprendre les bases du développement et déploiement d'un tel contrat,
+sans profiter d'aucune abstraction.
+
+Une fois, ce prototype terminé nous avions prévu de comparer cette solution a l'implémentation
+de la bibliothèque OpenZeppelin. Cette bibliothèque étant l'un des standard de l'environnement
+des smarts contract Ethereum.
+
+Durant le mois de projet, j'ai aussi contacté l'équipe de développeurs d'Ethereum afin d'obtenir
+des ressources sur le sujet. Cette équipe m'a répondu est m'a envoyé les dernières techniques du
+domaine. Nous avons alors décidé d'ajouter comme objectif la comparaison avec des techniques les
+plus avancés avec mon prototype et l'implémentation d'OpenZeppelin.
+
+\subsection{Scénario}
+
+\subsubsection{Scénario 1}
+
+Un état souhaite passer au vote électronique, il décide d’utiliser les smart contrats afin de
+décentraliser leur solution. L’objectif est de prouver aux électeurs que le vote n’est pas truqué. L’état va
+alors payer une équipe d’ingénieur afin de faire un système de vote qui pourra durer dans le temps.
+Néanmoins ils souhaitent aussi pouvoir modifier le mécanisme de vote au fur des années. C’est ici que
+mon projet de recherche prend tout son sens, je conseille cet état fictif d’utiliser mes recherches afin
+d’utiliser un smart contract modifiable. L’objectif est pouvoir changer le système de vote dans le futur
+tout en utilisant la technologie blockchain.
+
+\subsubsection{Scénario 2}
+
+Deux entreprises (A et B) souhaitent passer un accord, elles décident de partager leurs services
+de ressource humaine pour réduire les frais. Elles décident de stocker le nombre d’heure passé à
+travailler pour une entreprise de façon décentralisée (Smart Contract). Avec cette solution l’entreprise B
+pourra être sûre que l’entreprise A ne ment pas et vice versa. De plus A aimerait ajouter une nouvelle
+entreprise dans quelques années au système. Pour cela, le smart contract doit pouvoir être modifié pour
+ne pas forcer A et B et C (la nouvelle entreprise) d
