@@ -1,0 +1,67 @@
+\documentclass[11pt,oneside,a4paper]{article}
+\usepackage[table]{xcolor}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\pagestyle{fancy}
+\lfoot{Louis-Joseph AMAS}
+\cfoot{\thepage}
+\renewcommand*\contentsname{Sommaire}
+
+\begin{document}
+
+\title{More Flexible Smart Contract Languages for Permissioned
+Blockchains and Distributed Ledgers}
+\author{Louis-Joseph AMAS}
+\date{16 décembre 2020}
+\maketitle
+
+\begin{center}
+  \includegraphics[scale=0.5]{polytech.jpg}
+\end{center}
+
+\begin{center}
+  \includegraphics[scale=0.5]{inria.jpg}
+\end{center}
+
+\begin{abstract}
+Ce rapport présente mon projet de fin d'études mené à l'Inria Sophia Antipolis-Méditerranée. 
+Le projet consista à explorer le fonctionnement des Smart Contract. L'objectif a été de rechercher des moyens de rendre
+les smarts contracts (qui par définition son non immuable) modifiable.
+Plus en détails, j'ai dû concevoir la mise en place de prototype (PoC: Proof of concept) démontrant la possibilité de modification,
+de plus, j'ai dû comprendre les problèmes soulevés par cette nouvelle liberté et proposé de solutions.
+Dans le cadre de ce projet, j'ai pu travailler avec Mr Luigi Liquori, Mr Daniel de Carvalho et Mr Mansur Khazeev dans le cadre de multiples réunions. 
+J'ai pu réaliser trois présentations oral sur ce sujet afin d'aider Mr Khazeev à réaliser sa thèse.
+
+\end{abstract}
+\newpage
+\tableofcontents
+
+\newpage
+\input{files/introduction.tex}
+
+\newpage
+\input{files/context.tex}
+
+\newpage
+\input{files/objectifs.tex}
+
+\newpage
+\input{files/prototypes.tex}
+
+\newpage
+\input{files/problemes.tex}
+
+\newpage
+\input{files/pedagogie.tex}
+
+\newpage
+\input{files/ouvertures.tex}
+
+\newpage
+\input{files/conclusion.tex}
+
+\newpage
+\input{files/biblio.tex}
+\end{document}
+

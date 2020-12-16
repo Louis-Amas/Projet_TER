@@ -1,0 +1,69 @@
+\section{Contexte technologique}
+
+Statut: En cours
+
+Sujets:
+\begin{itemize}
+    \item Blockchain
+    \item Bitcoin
+    \item Ethereum
+    \item EVM
+    \item Solidity
+\end{itemize}
+
+
+\subsection{Blockchain}
+
+\subsubsection{Bitcoin}
+
+Une (ou un) blockchain, ou chaîne de blocs  Techniquement, il s'agit d'une base de données distribuée dont les informations stockées sont vérifiées 
+et groupées à intervalles de temps réguliers sous forme de bloc, formant ainsi une chaîne de blocs. L'ensemble est sécurisé par cryptographie. 
+La chaîne de blocs est alors stocké sur de multiple machine en même temps que l'on appelle des nœuds. 
+Cette chaîne permet de protéger contre la falsification et la modification de la base de données par les nœuds de stockage.
+C'est donc un registre distribué et sécurisé de toutes les transactions effectuées depuis le démarrage du système réparti.
+
+La première technologie déployant un tel système est le Bitcoin. Le Bitcoin utilise la blockchain afin de représenter un registre de compte
+distribué. Les utilisateurs souhaitant utiliser cette cryptomonnaie génère une paire de clé asymétrique.
+
+Pour rappel, les chiffrements asymétriques sont constitués de deux clés l'une publique disponible par tous le monde et l'une privée qui doit
+rester secrète. Les méthodes de chiffrements à clé publique permettent e de rendre un message inintelligible par toute personne n'ayant pas la clé 
+privée d'un message chiffré par la clé publique complémentaire. Cette technique de chiffrement permet aussi de vérifier (Signer numériquement) qu'un
+message a bien été écrit par quelqu'un possédant une paire de clé (Privée, publique).
+
+Bitcoin utilise cette fonctionnalité afin d'autoriser une personne à échanger son argent. Un bloc de la blockchain Bitcoin contient des transactions
+(des échanges de jeton BTC) signer par la clé privée de l'utilisateur souhaitant transférer ses jetons. Bitcoin calcul le hash de toutes ses 
+transactions et crée un bloc à l'aide de la concaténation de tous les hashs de toutes les transactions ainsi que le hash du bloc précédent.
+
+Cela permet de rendre quasi impossible la falsification et la modification de la chaîne. En effet, un attaquant voulant modifier la chaîne serait
+détecté car, le hash de son bloc serait invalide s'il modifie même qu'une transaction. Le Bitcoin réalise l'exploit de créer un équivalent a l'argent
+liquide mais numériquement.
+
+\subsubsection{Ethereum}
+
+Ethereum est une technologie qui révolutionne la blockchain en y ajoutant une fonctionnalité très intéressante nommé les smarts contract. Cette
+technologie est toujours basée sur le même principe que Bitcoin afin de valider ses transactions mais ajoute quelques nouvelles fonctionnalités.
+
+\subsection{Smart contract}
+
+Les contrats intelligents ou smart contracts sont des protocoles permettant d'exécuter du code de manière distribuée dans un environnement blockchain.
+Ce mécanisme permet de s'affranchir de l'architecture client / serveur mais aussi, des architectures distribuées traditionnels. Les développeurs de
+tel smart contract peuvent assumer que leurs contract une fois déployé sur la blockchain est immuable et décentralisé.
+
+L'immuabilité de tel contrat permet de gagner la confiance des utilisateurs. Un utilisateur peut regarder le code du contrat déployé est être sûr 
+de son comportement. Cela permet par exemple de programmer des jeux d'argents de manière numérique sans tierce de confiance mathématiquement 
+vérifiable juste.
+
+\subsubsection{EVM}
+
+Pour créer une tel technologie Ethereum utilise l'Ethereum Virtual Machine (EVM) cette machine virtuelle peut être comparé à la JVM mais de manière distribuée.
+L'EVM est une machine basée sur la pile distribuée.
+L'EVM est exécutée sur chaque nœud du réseau Ethereum. Et chaque exécution est signé de la même manière que Bitcoin afin de protéger contre la falsification
+ou la modification d'une exécution.
+
+\subsubsection{Solidity}
+
+Solidity est un langage de programmation orienté objet dédié à l'écriture de contrats intelligents. Il est utilisé pour implémenter des smarts contrat sur diverses 
+blockchains, notamment Ethereum. Solidity est un langage inspiré des langages orientées objets ainsi que du langage Javascript. L'objectif est de rendre simple et
+compréhensible le développement de smart contracts à tous. Néanmoins sa simplicité peut causer des problèmes car, il n'y a pas de moyen simple de vérifier 
+l'exactitude du programme. À la différence d'un langage fonctionnel. Sachant que les smarts contracts représentent souvent de l'argent il est très important
+de faire attention au code déployé.

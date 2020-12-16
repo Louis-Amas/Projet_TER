@@ -1,0 +1,27 @@
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {section}{\numberline {2}Context technologique}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Blockchain}{4}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Bitcoin}{4}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Ethereum}{5}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.2}Smart contract}{5}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}EVM}{5}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Solidity}{5}{subsubsection.2.2.2}%
+\contentsline {section}{\numberline {3}Objectifs}{7}{section.3}%
+\contentsline {section}{\numberline {4}Prototypes}{8}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Phase de recherche}{8}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Premier prototype}{8}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Comparaison avec la bibliothèque populaire}{8}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Puissance du standard}{8}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Problèmes soulevés}{9}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Garder la confiance des utilisateurs}{9}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Systèmes de gouvernance}{9}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Avec un administrateur}{9}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Avec un système de vote}{9}{subsubsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.3}Multisig wallet}{9}{subsubsection.5.2.3}%
+\contentsline {section}{\numberline {6}Pedagogie}{10}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Recapilulatif des réunions}{10}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Mon organisation}{10}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Ouvertures}{11}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Améliorer la manière de créer des contracts dynamiquement modifiable dans solidity}{11}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Ajout d'un système de type plus intelligent pour prévenir les erreurs}{11}{subsection.7.2}%
+\contentsline {section}{\numberline {8}Conclusion}{12}{section.8}%

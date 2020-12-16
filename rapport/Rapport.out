@@ -1,0 +1,27 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Context technologique}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Blockchain}{section.2}% 3
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Bitcoin}{subsection.2.1}% 4
+\BOOKMARK [3][-]{subsubsection.2.1.2}{Ethereum}{subsection.2.1}% 5
+\BOOKMARK [2][-]{subsection.2.2}{Smart contract}{section.2}% 6
+\BOOKMARK [3][-]{subsubsection.2.2.1}{EVM}{subsection.2.2}% 7
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Solidity}{subsection.2.2}% 8
+\BOOKMARK [1][-]{section.3}{Objectifs}{}% 9
+\BOOKMARK [1][-]{section.4}{Prototypes}{}% 10
+\BOOKMARK [2][-]{subsection.4.1}{Phase de recherche}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.2}{Premier prototype}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.3}{Comparaison avec la biblioth\350que populaire}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.4}{Puissance du standard}{section.4}% 14
+\BOOKMARK [1][-]{section.5}{Probl\350mes soulev\351s}{}% 15
+\BOOKMARK [2][-]{subsection.5.1}{Garder la confiance des utilisateurs}{section.5}% 16
+\BOOKMARK [2][-]{subsection.5.2}{Syst\350mes de gouvernance}{section.5}% 17
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Avec un administrateur}{subsection.5.2}% 18
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Avec un syst\350me de vote}{subsection.5.2}% 19
+\BOOKMARK [3][-]{subsubsection.5.2.3}{Multisig wallet}{subsection.5.2}% 20
+\BOOKMARK [1][-]{section.6}{Pedagogie}{}% 21
+\BOOKMARK [2][-]{subsection.6.1}{Recapilulatif des r\351unions}{section.6}% 22
+\BOOKMARK [2][-]{subsection.6.2}{Mon organisation}{section.6}% 23
+\BOOKMARK [1][-]{section.7}{Ouvertures}{}% 24
+\BOOKMARK [2][-]{subsection.7.1}{Am\351liorer la mani\350re de cr\351er des contracts dynamiquement modifiable dans solidity}{section.7}% 25
+\BOOKMARK [2][-]{subsection.7.2}{Ajout d'un syst\350me de type plus intelligent pour pr\351venir les erreurs}{section.7}% 26
+\BOOKMARK [1][-]{section.8}{Conclusion}{}% 27
