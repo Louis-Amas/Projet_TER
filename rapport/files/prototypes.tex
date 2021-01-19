@@ -109,9 +109,53 @@ qui ne connaisse pas l'existence du Proxy.
   \label{fig:proxy_structuré}
 \end{figure}
 
-\subsection{Comparaison avec la bibliothèque populaire}
+\subsection{Implémentation officielle (Diamond)}
 
-\subsection{Dernière avancé}
+En poursuivant mes recherches sur l'état de l'art du domaine j'ai trouvé sur le site internet des 
+"Ethereum Improvement Proposals"(EIP). La proposition 2535 du 22 février 2020 ayant pour but de formaliser
+la manière dont programmer un Proxy intelligent. Le principe sous-jacent est identique à mon prototype
+avec un stockage non structuré mais, cette proposition y ajoute une interface plus simple et plus modulable.
+
+En effet, l'objectif est de créer une bibliothèque avec une interface simple afin de permettre facilement à un
+utilisateur de programmer son propre proxy personnaliser.
+
+Ce diamant fonctionne de la manière suivante.
+
+Un diamant est composé de facette chaque facette représente une fonction. Chaque facette permet de lier l'identificateur
+de fonction à l'adresse d'un autre contrat. Quand un appel de fonction est exécuté sur un diamant alors celui-ci ira chercher
+dans sa structure de données la facette correspondante à l'appel de fonction. Une fois cette facette trouvée il pourra alors
+appeler delegatecall sur l'adresse associé à cette facette afin d'exécuter le coder situé dans un autre contract.
+
+Afin d'ajouter, modifier ou supprimer une facette la bibliothèque proposée contient une fonction nommée "diamondCut".
+Cette fonction prend en paramètre un tableau de "coupe de diamant". Une coupe de diamant est une structure contenant
+une action (Ajouter, modifier ou supprimer), une adresse d'un contract et un tableau de sélecteur de fonction. Voir la figure
+\pageref{fig:diamond_struct}
+
+Un développeur voulant utiliser cette bibliothèque aura juste à générer un tableau de "coupe de diamant" modélisant le 
+proxy qu'il souhaite réaliser. La seule obligation du développeur est d'utiliser uniquement un stockage non structuré dans
+ces facettes.
+
+\begin{figure}[h]
+  \caption{Schéma représentatif du fonctionnement internet d'un diamant.}
+  \includegraphics[scale=0.5]{diamond_struct.png}
+  \centering 
+  \label{fig:diamond_struct}
+\end{figure}
+
+% \begin{figure}[h]
+  % \caption{Schéma représentatif des appels à un diamant.}
+  % \includegraphics[scale=0.5]{diamond_ex.png}
+  % \centering
+  % \label{fig:diamond_ex}
+% \end{figure}
 
 
+\subsection{Comparaison de mon prototype et du diamant}
 
+Il est évident que l'implémentation officielle est bien plus avancée que mon prototype,
+néanmoins nous pouvons voir que mon prototype utilise la même technique que l'implémentation officielle.
+La plus grande différence entre le diamant et mon prototype est la modularité. En effet, mon prototype étant
+un prototype je ne me suis pas concentré sur la simplicité de l'interface d'utilisation. Mon objectif était 
+de réaliser un "Proof of Concept". L'objectif est réalisé j'ai un prototype fonctionnel et cela m'a permis 
+de bien mieux comprendre le fonctionnement de l'implémentation officielle. J'ai pu acquérir les connaissances
+bas niveaux nécessaires à de telle utilisation.
