@@ -50,3 +50,9 @@ Cela permet de récupérer la confiance des utilisateurs car, toute modification
 
 \subsection{Gouvernance avec un Multisig wallet}
 
+Un "multisig wallet" est un procédé cryptographique qui permet d'effectuer une action (chiffrer, déchiffrer ou signer)
+à l'aide de plusieurs clés. Cela permet de vérifier cryptographiquement l'accord entre plusieurs parties. En effet, pour
+executer une action il faut l'accord de chaque partie. Un smart contract 
+avec un système de gouvernance basé sur un "multisig wallet" aura donc besoin de 2 à $N$ clés publiques lors de sa création. Si, 
+un utilisateur souhaite ajouter, modifier ou supprimer le comportement du smart contract, il devra alors obtenir les signatures
+de chaque clé privée correspondante aux clés publiques données au préalable.
