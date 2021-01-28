@@ -1,19 +1,52 @@
 \section{Problèmes soulevés}
 
-Statut: À faire
-\begin{itemize}
-    \item Comment garder la confiance des utilisateurs.
-    \item Comment sécuriser (ACL).
-\end{itemize}
+Pouvoir modifier dynamiquement le comportement d'un smart contract comporte des risques.
+En effet, comme expliquer précédemment les utilisateurs ont confiance dans les smarts contracts
+car, leurs comportements sont immuables. Il est donc primordial de trouver des solutions afin de garder
+la confiance des utilisateurs. Pour cela il existe différentes type de méthode appelé gouvernance:
+
+\subsection{Gouvernance avec un administrateur}
+
+La première technique de gouvernance qui est aussi la plus simple est avec un administrateur.
+En effet, à la création d'un smart contract on peut définir un administrateur qui à tout contrôle
+sur le comportement du smart contract. Il peut ajouter, modifier ou supprimer du comportement.
+Dans ce cas utiliser le smart contract revient à utiliser une alternative centralisée. On perd
+l'avantage du décentralisé de la blockchain.
+
+\subsection{Gouvernance avec un système de vote}
+
+Un système de gouvernance avec un système de vote permet de garder l'aspect décentralisé d'un smart contract.
+Dans ce type de système il est nécessaire définir un protocole de proposition et d'acceptation
+d'un changement. Pour définir la valeur d'un vote on peut utiliser un smart contract implémentant un Token.
+Un Token est défini dans l'environnement Ethereum par le la norme ERC-20. Cette norme définie qu'un Token
+fongible (Un bien fongible est un bien qui se caractérise par son appartenance à un genre et non par 
+une identité propre). Un Token peut donc s'apparenter à une monnaie. Un Token peut s'échanger ou être créé.
+
+À la création d'un smart contract modifiable gouverné par un système de Vote, on peut imaginer générer une quantité
+fixe de Token est les attribuer à un nombre restreint de parti prenante. Afin d'accepter une proposition on demande
+aux personnes ayant des Tokens de voter. Le vote consiste à pour toutes les personnes ayant des Tokens de donner leurs
+accord ou non accord (oui ou non) par rapport à une proposition. S'ils donnent leurs accords alors leur quantité 
+de Token est ajouté au nombre de vote pour la proposition. Si le nombre de vote pour une proposition est supérieur ou
+égal à la quantité totale * 0.8. Alors 80\% des personnes ayant le droit de vote sont d'accord pour la modification.
+Le code permettant d'ajouter une proposition et de voter doit être immuable afin de protéger contre un vote
+souhaitant modifier le système de vote.
+
+Par exemple: deux entreprises créer un smart contract modifiable (basé sur la bibliothèque Diamond). À la création
+elle génère 1000 Tokens (500 pour les deux entreprises). Afin d'ajouter, modifier ou supprimer 
+du comportement au smart contract il est nécessaire d'obtenir l'accord de 80\% des tokens créer. 
+L'entreprise 1 demande d'ajouter une fonctionnalité nommée "A". La proposition A reçoit directement le nombre de token
+de l'entreprise 1 soit 500. Si l'entreprise 2 vote "oui" alors le total des votes sera de 1000 et vu que $1000 > 1000*0.8$
+alors la proposition est accepté.
+
+L'avantage de cette méthode est que l'on peut très facilement ajouter des acteurs.
+
+Par exemple: L'entreprise 2 à un accord avec une nouvelle entreprise nommée "3". Cet accord consiste à obtenir
+25\% des droits de vote sur le smart contract modifiable. Afin de réaliser cette action l'entreprise 2 envoi 250
+token à l'entreprise 3.
 
 
-\subsection{Garder la confiance des utilisateurs}
+Ce système permet une grande flexibilité est permet d'instaurer un vrai système démocratique au sein de la blockchain.
+Cela permet de récupérer la confiance des utilisateurs car, toute modification doit être approuvé.
 
-\subsection{Systèmes de gouvernance}
-
-\subsubsection{Avec un administrateur}
-
-\subsubsection{Avec un système de vote}
-
-\subsubsection{Multisig wallet}
+\subsection{Gouvernance avec un Multisig wallet}
 
