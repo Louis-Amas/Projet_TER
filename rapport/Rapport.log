@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.1.19)  26 JAN 2021 10:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.1.19)  29 JAN 2021 16:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -357,10 +357,6 @@ File: inria.jpg Graphic file (type jpg)
 <use inria.jpg>
 Package pdftex.def Info: inria.jpg  used on input line 25.
 (pdftex.def)             Requested size: 155.079pt x 67.75294pt.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 29.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 29.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./polytech.jpg> <./inria.j
@@ -377,13 +373,13 @@ We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
 [2] (./files/introduction.tex) [3] (./files/context.tex
-Overfull \hbox (3.92131pt too wide) in paragraph at lines 28--32
+Overfull \hbox (3.92131pt too wide) in paragraph at lines 16--20
 \OT1/cmr/m/n/10.95 per-sonne n'ayant pas la cl^^Se priv^^See d'un mes-sage chif
 fr^^Se par la cl^^Se publique compl^^Sementaire.
  []
 
 [4]) [5] (./files/objectifs.tex
-Overfull \hbox (0.30171pt too wide) in paragraph at lines 27--31
+Overfull \hbox (0.30171pt too wide) in paragraph at lines 25--29
 \OT1/cmr/m/n/10.95 com-para-i-son avec des tech-niques les plus avanc^^Ses avec
  mon pro-to-type et l'impl^^Sementation
  []
@@ -396,39 +392,39 @@ We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
 [6] (./files/prototypes.tex
-Overfull \hbox (19.23495pt too wide) in paragraph at lines 6--8
-[]\OT1/cmr/m/n/10.95 Tous le code pr^^Sesent^^Se ICI est ac-ces-si-ble ici: htt
-ps://github.com/Louis-Amas/Projet[]TER 
+Overfull \hbox (2.23495pt too wide) in paragraph at lines 3--5
+\OT1/cmr/m/n/10.95 Tous le code pr^^Sesent^^Se ICI est ac-ces-si-ble ici: https
+://github.com/Louis-Amas/Projet[]TER 
  []
 
 [7]
-<proxy.jpg, id=211, 545.03625pt x 171.64125pt>
+<proxy.jpg, id=206, 545.03625pt x 171.64125pt>
 File: proxy.jpg Graphic file (type jpg)
 <use proxy.jpg>
-Package pdftex.def Info: proxy.jpg  used on input line 66.
+Package pdftex.def Info: proxy.jpg  used on input line 63.
 (pdftex.def)             Requested size: 327.02428pt x 102.98552pt.
-<proxy_structured_stockage.jpg, id=213, 720.6925pt x 208.78pt>
+<proxy_structured_stockage.jpg, id=208, 720.6925pt x 208.78pt>
 File: proxy_structured_stockage.jpg Graphic file (type jpg)
 <use proxy_structured_stockage.jpg>
-Package pdftex.def Info: proxy_structured_stockage.jpg  used on input line 93.
+Package pdftex.def Info: proxy_structured_stockage.jpg  used on input line 90.
 (pdftex.def)             Requested size: 360.34537pt x 104.38972pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<proxy_unstructured.jpg, id=214, 720.6925pt x 242.9075pt>
+<proxy_unstructured.jpg, id=209, 720.6925pt x 242.9075pt>
 File: proxy_unstructured.jpg Graphic file (type jpg)
 <use proxy_unstructured.jpg>
-Package pdftex.def Info: proxy_unstructured.jpg  used on input line 107.
+Package pdftex.def Info: proxy_unstructured.jpg  used on input line 104.
 (pdftex.def)             Requested size: 360.34537pt x 121.45345pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [8 <./proxy.jpg>]
-<diamond_struct.png, id=223, 556.0775pt x 727.71875pt>
+<diamond_struct.png, id=220, 556.0775pt x 727.71875pt>
 File: diamond_struct.png Graphic file (type png)
 <use diamond_struct.png>
-Package pdftex.def Info: diamond_struct.png  used on input line 140.
+Package pdftex.def Info: diamond_struct.png  used on input line 137.
 (pdftex.def)             Requested size: 278.03807pt x 363.85847pt.
 
 
@@ -441,20 +437,26 @@ Overfull \hbox (4.95552pt too wide) in paragraph at lines 18--24
 r-met de garder l'aspect d^^Secentralis^^Se
  []
 
-) [11] [12] (./files/pedagogie.tex) [13] (./files/ouvertures.tex) [14]
-(./files/conclusion.tex) [15] (./files/biblio.tex) [16] (./Rapport.aux)
+) [11] [12] (./files/pedagogie.tex
+Overfull \hbox (7.16565pt too wide) in paragraph at lines 34--36
+[]\OT1/cmr/m/n/10.95 Pr^^Separer des Pow-er-Point ou des graphiques. L'objectif
+ est de pr^^Sesenter les recherches
+ []
+
+) [13] (./files/ouvertures.tex) [14] (./files/conclusion.tex) [15]
+(./files/biblio.tex) [16] (./Rapport.aux)
 Package rerunfilecheck Info: File `Rapport.out' has not changed.
-(rerunfilecheck)             Checksum: 99816530C598BBDAA3C19F8BAD83A5CB;2271.
+(rerunfilecheck)             Checksum: 0F39A84D64A374E7048D67AD2F7D8238;2274.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6460 strings out of 479383
- 96339 string characters out of 5875830
- 417692 words of memory out of 5000000
- 23381 multiletter control sequences out of 15000+600000
+ 6459 strings out of 479383
+ 96319 string characters out of 5875830
+ 418692 words of memory out of 5000000
+ 23380 multiletter control sequences out of 15000+600000
  409771 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,12n,72p,228b,328s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -462,20 +464,17 @@ Here is how much of TeX's memory you used:
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
-/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></u
-sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.
-pfb>
-Output written on Rapport.pdf (16 pages, 308383 bytes).
+cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmsl10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/te
+xmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
+Output written on Rapport.pdf (16 pages, 291621 bytes).
 PDF statistics:
- 334 PDF objects out of 1000 (max. 8388607)
- 291 compressed objects within 3 object streams
+ 322 PDF objects out of 1000 (max. 8388607)
+ 282 compressed objects within 3 object streams
  60 named destinations out of 1000 (max. 500000)
  287 words of extra memory for PDF output out of 10000 (max. 10000000)
 
