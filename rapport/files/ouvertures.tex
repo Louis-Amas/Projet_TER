@@ -1,34 +1,32 @@
 \section{Ouvertures}
 
 \subsection{Améliorer la manière de créer des contracts dynamiquement modifiable dans Solidity}
-Suite à toutes mes recherches et suite aux discussions avec Dr Luigi Liquori, nous arrivons à la conclusion
-que créer des contracts dynamiquement modifiable est possible mais requiert une base technique importante.
+Suite à toutes mes recherches et suite aux discussions avec le Dr Luigi Liquori, nous arrivons à la conclusion
+que \emph{créer des contracts dynamiquement modifiable est possible mais requiert une base technique importante}.
 De plus, il est très facile de faire des erreurs car, l'implémentation de tel fonctionnalité requiert des appels
-bas niveau à l'EVM. La bibliothèque Diamond est une solution par l'usage d'une bibliothèque qui en capsule certain
-appel bas niveau. Néanmoins un utilisateur de cette bibliothèque doit tout de même maîtriser le fonctionnement 
+bas niveau à l'EVM. La bibliothèque \texttt{Diamond} est une solution par l'usage d'une bibliothèque qui en capsule certain
+appel bas niveau. Néanmoins, un utilisateur de cette bibliothèque doit tout de même maîtriser le fonctionnement 
 de l'allocation et du stockage de données de l'EVM. Et ceci peut-être très difficile est donc peu créer des 
 problèmes aux développeurs de smart contract. Et comme dis précédemment, une erreur dans un smart contract
-peut avoir des répercussions catastrophiques sur les utilisateurs. 
+peut avoir des répercussions catastrophiques sur les utilisateurs. Un aout d'un système de typage \emph{ad hoc} dans Solidity pourrait tempter de sécuriser cette nouvelle fonctionnalité.
 
 Une manière d'améliorer et de simplifier  l'écriture de smart contract modifiable, il serait intéressant
-d'ajouter des fonctionnalités au langage (Solidity).
-En effet, il serait possible d'ajouter un mot clé du type "upgradble" définissant la possibilité à un smart contract
-d'être modifié à l'avenir. Une fois un smart contract de type upgradble utilisé le compilateur pourrait générer
+d'ajouter des fonctionnalités de type au langage (Solidity). En effet, il serait possible d'ajouter un mot clé du genre \texttt{upgradable} définissant la possibilité à un smart contract d'être modifiable à l'avenir. Une fois un smart contract de type \emph{upgradable} utilisé, le compilateur pourrait générer
 tous les appels bas niveaux et cacher à l'utilisateur leurs fonctionnements. Un nouveau comportement pourrait être
-défini par un autre type ("extension"). Ce type permettrait à l'EVM de comprendre que ce smart contract est uniquement
-utilisé pour être chargé dans un smart contract upgradble. 
+défini par un autre type ("extension"). Ce nouveau type permettrait à l'EVM de comprendre que ce smart contract est uniquement utilisé pour être chargé dans un smart contract \emph{upgradable}. 
 
 Dans un plus long terme, il est selon moi important de ne pas se contenter à Solidity. Solidity est le premier langage
 pour écrire des smarts contract néanmoins de plus en plus de nouveau langage sont écrits. Solidity se compile en EVM
-bytecode ou en WASM (WebAssembly pour EVM). De nouvelle blockchain se développe tous les jours et ses nouvelles
-blockchains ont des nouveaux langages et des nouvelles fonctionnalités. Il est important selon moi de définir comment
+bytecode ou en WASM (WebAssembly pour EVM). Des nouvelles blockchains se développent tous les jours et ses nouvelles
+blockchains ont des nouveaux langages et des nouvelles fonctionnalités. Il est important, selon moi, de définir comment
 réaliser un smart contract modifiable en WASM et d'y ajouter une bibliothèque près compilé (selon la cible EVM ou autre)
 utilisable dans chaque langage et chaque blockchain.
 
 Ceci permettra de grandement simplifier l'adoption de contrats dynamiquement modifiable. Et ces contrats sont très
 prometteurs à l'avenir pour de nombreuses applications (Assurance, finance décentralisée...).
 
-\subsection{Ajout d'un système de type plus intelligent pour prévenir les erreurs}
+\subsection{Ajout d'un système de type plus intelligent pour prévenir les erreurs de contrat modifiables dynamiquement mais pas n' emporte comment}
+%
 Programmer un smart contract modifiable est possible mais est sujet aux erreurs. En effet, sachant que tout est fait
 en appelant des opcodes bas niveaux et en gérant la mémoire soi-même, il est très facile de faire une erreur grave.
 Suite aux discussions réalisées nous en arrivons à la conclusion qu'il peut être important de réaliser une vérification
