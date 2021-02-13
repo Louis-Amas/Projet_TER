@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.1.19)  29 JAN 2021 16:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.2.13)  13 FEB 2021 11:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -244,11 +244,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 \l__kernel_color_stack_int=\count199
 \l__pdf_internal_box=\box49
-) (./Rapport.aux
-
-LaTeX Warning: Label `fig:proxy_structuré' multiply defined.
-
-)
+) (./Rapport.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
 LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
@@ -347,12 +343,12 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 19.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 19.
-<polytech.jpg, id=132, 301.125pt x 301.125pt>
+<polytech.jpg, id=136, 301.125pt x 301.125pt>
 File: polytech.jpg Graphic file (type jpg)
 <use polytech.jpg>
 Package pdftex.def Info: polytech.jpg  used on input line 21.
 (pdftex.def)             Requested size: 150.56212pt x 150.56212pt.
-<inria.jpg, id=133, 310.15875pt x 135.50626pt>
+<inria.jpg, id=137, 310.15875pt x 135.50626pt>
 File: inria.jpg Graphic file (type jpg)
 <use inria.jpg>
 Package pdftex.def Info: inria.jpg  used on input line 25.
@@ -379,7 +375,7 @@ fr^^Se par la cl^^Se publique compl^^Sementaire.
  []
 
 [4]) [5] (./files/objectifs.tex
-Overfull \hbox (0.30171pt too wide) in paragraph at lines 25--29
+Overfull \hbox (0.30171pt too wide) in paragraph at lines 24--28
 \OT1/cmr/m/n/10.95 com-para-i-son avec des tech-niques les plus avanc^^Ses avec
  mon pro-to-type et l'impl^^Sementation
  []
@@ -392,89 +388,91 @@ We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
 [6] (./files/prototypes.tex
-Overfull \hbox (2.23495pt too wide) in paragraph at lines 3--5
-\OT1/cmr/m/n/10.95 Tous le code pr^^Sesent^^Se ICI est ac-ces-si-ble ici: https
-://github.com/Louis-Amas/Projet[]TER 
+Overfull \hbox (15.1259pt too wide) in paragraph at lines 3--4
+\OT1/cmr/m/n/10.95 Tous le code pr^^Sesent^^Se dans ce rap-port est ac-ces-si-b
+le ici: []$\OT1/cmtt/m/n/10.95 https : / / github . com / Louis-[]Amas /
  []
 
 [7]
-<proxy.jpg, id=206, 545.03625pt x 171.64125pt>
+<proxy.jpg, id=227, 545.03625pt x 171.64125pt>
 File: proxy.jpg Graphic file (type jpg)
 <use proxy.jpg>
-Package pdftex.def Info: proxy.jpg  used on input line 63.
+Package pdftex.def Info: proxy.jpg  used on input line 57.
 (pdftex.def)             Requested size: 327.02428pt x 102.98552pt.
-<proxy_structured_stockage.jpg, id=208, 720.6925pt x 208.78pt>
+<proxy_structured_stockage.jpg, id=228, 720.6925pt x 208.78pt>
 File: proxy_structured_stockage.jpg Graphic file (type jpg)
 <use proxy_structured_stockage.jpg>
-Package pdftex.def Info: proxy_structured_stockage.jpg  used on input line 90.
+Package pdftex.def Info: proxy_structured_stockage.jpg  used on input line 65.
 (pdftex.def)             Requested size: 360.34537pt x 104.38972pt.
 
+Overfull \hbox (27.43265pt too wide) in paragraph at lines 78--82
+\OT1/cmr/m/n/10.95 ex^^Secute le code d'un autre con-trat mais garde le stock-a
+ge du con-trat ap-pelant "\OT1/cmtt/m/n/10.95 delegatecall\OT1/cmr/m/n/10.95 ".
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+ []
 
-<proxy_unstructured.jpg, id=209, 720.6925pt x 242.9075pt>
+[8 <./proxy.jpg> <./proxy_structured_stockage.jpg>]
+<proxy_unstructured.jpg, id=242, 720.6925pt x 242.9075pt>
 File: proxy_unstructured.jpg Graphic file (type jpg)
 <use proxy_unstructured.jpg>
-Package pdftex.def Info: proxy_unstructured.jpg  used on input line 104.
-(pdftex.def)             Requested size: 360.34537pt x 121.45345pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[8 <./proxy.jpg>]
-<diamond_struct.png, id=220, 556.0775pt x 727.71875pt>
+Package pdftex.def Info: proxy_unstructured.jpg  used on input line 97.
+(pdftex.def)             Requested size: 288.2719pt x 97.16127pt.
+<diamond_struct.png, id=245, 556.0775pt x 727.71875pt>
 File: diamond_struct.png Graphic file (type png)
 <use diamond_struct.png>
-Package pdftex.def Info: diamond_struct.png  used on input line 137.
+Package pdftex.def Info: diamond_struct.png  used on input line 127.
 (pdftex.def)             Requested size: 278.03807pt x 363.85847pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [9 <./proxy_structured_stockage.jpg> <./proxy_unstructured.jpg>] [10 <./diamo
-nd_struct.png>] (./files/problemes.tex
-Overfull \hbox (4.95552pt too wide) in paragraph at lines 18--24
-\OT1/cmr/m/n/10.95 Un syst^^Reme de gou-ver-nance avec un syst^^Reme de vote pe
-r-met de garder l'aspect d^^Secentralis^^Se
+<diamond_ex.png, id=247, 642.4pt x 361.35pt>
+File: diamond_ex.png Graphic file (type png)
+<use diamond_ex.png>
+Package pdftex.def Info: diamond_ex.png  used on input line 134.
+(pdftex.def)             Requested size: 321.19922pt x 180.67456pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [9 <./proxy_unstructured.jpg>] [10 <./diamond_struct.png>]
+(./files/problemes.tex
+Overfull \hbox (4.82866pt too wide) in paragraph at lines 18--24
+\OT1/cmr/m/n/10.95 Un syst^^Reme de gou-ver-nance avec un \OT1/cmr/m/it/10.95 s
+yst^^Reme de vote \OT1/cmr/m/n/10.95 per-met de garder l'aspect d^^Secentralis^
+^Se
  []
 
-) [11] [12] (./files/pedagogie.tex
-Overfull \hbox (7.16565pt too wide) in paragraph at lines 34--36
-[]\OT1/cmr/m/n/10.95 Pr^^Separer des Pow-er-Point ou des graphiques. L'objectif
- est de pr^^Sesenter les recherches
- []
-
-) [13] (./files/ouvertures.tex) [14] (./files/conclusion.tex) [15]
-(./files/biblio.tex) [16] (./Rapport.aux)
+[11 <./diamond_ex.png>]) [12] (./files/pedagogie.tex) [13]
+(./files/ouvertures.tex) [14] (./files/conclusion.tex) [15] (./files/biblio.tex
+) [16] (./Rapport.aux)
 Package rerunfilecheck Info: File `Rapport.out' has not changed.
-(rerunfilecheck)             Checksum: 0F39A84D64A374E7048D67AD2F7D8238;2274.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
+(rerunfilecheck)             Checksum: D18B4628ED63ACAD18B51929D8E64102;2438.
  ) 
 Here is how much of TeX's memory you used:
- 6459 strings out of 479383
- 96319 string characters out of 5875830
- 418692 words of memory out of 5000000
- 23380 multiletter control sequences out of 15000+600000
- 409771 words of font info for 48 fonts, out of 8000000 for 9000
+ 6486 strings out of 479383
+ 96663 string characters out of 5875830
+ 418979 words of memory out of 5000000
+ 23396 multiletter control sequences out of 15000+600000
+ 410476 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,12n,72p,228b,328s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 66i,12n,72p,606b,328s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
-/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsl10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/te
-xmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on Rapport.pdf (16 pages, 293133 bytes).
+c/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
+usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pf
+b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/publi
+c/cm-super/sfrm1095.pfb>
+Output written on Rapport.pdf (16 pages, 385808 bytes).
 PDF statistics:
- 322 PDF objects out of 1000 (max. 8388607)
- 282 compressed objects within 3 object streams
- 60 named destinations out of 1000 (max. 500000)
- 287 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 367 PDF objects out of 1000 (max. 8388607)
+ 323 compressed objects within 4 object streams
+ 68 named destinations out of 1000 (max. 500000)
+ 300 words of extra memory for PDF output out of 10000 (max. 10000000)
 
